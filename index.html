@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body style='text-align:center;>
+    <h1> Super Trunfo</h1>
+  
+  <container class="container" '>
+    <button onclick="comecar()">Começar</button>
+    <button id="botao" onclick="jogar()">Jogar</button>
+
+    <h3>Carta Jogador</h3>
+    
+    <span class= "cartaJogador" id="cartaJogador"><h1></h1> <br></span>
+    <h3>Carta Maquina</h3>
+    <span class= "cartaMaquina" id="cartaMaquina"></span>
+    <h3>Resultado</h3>
+    <h6 id="resultado"></h6>
+    
+  </container>
+
+
+<script>
+
+
+
+  const cartas = {
+    0:{
+      atributos:{
+        velocidade:1300,
+        empuxo:3500,
+        envergadura:7.70,
+        
+    },
+      img:"",
+    },
+    1:{
+      atributos:{
+        velocidade:1000,
+        empuxo:3000,
+        envergadura:6.70,
+        
+    },
+      img:"",
+    },
+    2:{
+      atributos:{
+        velocidade:1500,
+        empuxo:4500,
+        envergadura:4.70,
+        
+    },
+      img:"",
+    }
+  }
+  const cartaMaquinaTexto = document.getElementById("cartaMaquina");
+  const cartaJogadorTexto = document.getElementById("cartaJogador");
+  const resultado = document.getElementById('resultado');
+
+
+
+  let cartaMaquina 
+  let cartaJogador 
+
+  
+
+  function gerarNumero(){
+    let numero = parseInt(Math.random()* 3);
+    if(numero == 0 ){
+      numero = parseInt(Math.random() * 3);
+    }
+    return numero;
+  }
+  function jogar(){
+    
+    const escolhaJogador = document.querySelectorAll('input[name = "atributoJogador"]'); 
+    for(const botaoSelecionado of escolhaJogador){
+          if(botaoSelecionado.checked){
+            radioSelecionado = botaoSelecionado.value
+            const cartaSeleciona = cartas[cartaJogador].atributos 
+            switch (radioSelecionado) {
+              case 'velocidade':
+                if(cartas[cartaJogador].atributos.velocidade == cartas[cartaMaquina].atributos.velocidade){
+                  resultado.innerHTML = 'Empate'
+                }else if(cartas[cartaJogador].atributos.velocidade > cartas[cartaMaquina].atributos.velocidade){
+                  resultado.innerHTML = 'Jogador venceu'
+                }else if (cartas[cartaJogador].atributos.velocidade < cartas[cartaMaquina].atributos.velocidade){
+                  resultado.innerHTML = 'Maquina venceu ';
+                }
+                break;
+              case 'empuxo':
+                if(cartas[cartaJogador].atributos.empuxo == cartas[cartaMaquina].atributos.empuxo){
+                  resultado.innerHTML = 'Empate';
+                }else if(cartas[cartaJogador].atributos.empuxo > cartas[cartaMaquina].atributos.empuxo){
+                  resultado.innerHTML = 'Jogador venceu';
+                }else if(cartas[cartaJogador].atributos.empuxo < cartas[cartaMaquina].atributos.empuxo){
+                  resultado.innerHTML = 'Maquina venceu'
+                }
+                break;
+              case 'envergadura':
+                if(cartas[cartaJogador].atributos.envergadura == cartas[cartaMaquina].atributos.envergadura){
+                  resultado.innerHTML = 'Empate';
+                }else if(cartas[cartaJogador].atributos.envergadura > cartas[cartaMaquina].atributos.envergadura){
+                  resultado.innerHTML = 'Jogador venceu';
+                }else if(cartas[cartaMaquina].atributos.envergadura < cartas[cartaMaquina].atributos.envergadura){
+                  resultado.innerHTML = 'Maquina venceu';
+                }
+                
+            
+
+            }
+            
+            
+            cartaMaquinaTexto.innerHTML = 
+              `Velocidade ${cartas[cartaMaquina].atributos.velocidade} <Br>
+              Empuxo ${cartas[cartaMaquina].atributos.empuxo} <br>
+              Envergadura ${cartas[cartaMaquina].atributos.envergadura}`
+            }
+
+          }
+        }
+
+        //resultado.innerHTML = escolhaJogador[i].value;
+        //let botaoSelecionado = escolhaJogador[i].value;
+        
+  function comecar(){
+    cartaJogador = gerarNumero();
+    cartaMaquina = gerarNumero();
+    escreverAtributos();
+    resultado.innerHTML = " ";
+    cartaMaquinaTexto.innerHTML = " ";
+   
+  
+  }
+
+  function escreverAtributos(){
+    cartaJogadorTexto.innerHTML =  
+    `<input type="radio" id="velocidade" name="atributoJogador" value="velocidade" > 
+    <label for ="velocidade">Velocidade</label> ${cartas[cartaJogador].atributos.velocidade} <br>
+    <input type="radio" id="empuxo" name="atributoJogador" value="empuxo">
+    <label for="empuxo">Empuxo</label> ${cartas[cartaJogador].atributos.empuxo} <br>
+    <input type="radio" id="envergadura" name="atributoJogador" value="envergadura" >
+    <label for="envergadura">Envergadura</label> ${cartas[cartaJogador].atributos.envergadura}
+
+  `;
+  }
+  
+
+
+
+</script>
+</body>
+</html>
