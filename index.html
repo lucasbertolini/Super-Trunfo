@@ -66,9 +66,9 @@
   const cartaJogadorTexto = document.getElementById("cartaJogador");
   const resultado = document.getElementById('resultado');
   const jogadorGanhasTexto = document.getElementById('jogadorVitorias');
-  const maquinaGanhasTexto = document.getElementById('maquinaVitorias')
-  let maquinaGanhas = 0
-  let jogadorGanhas = 0
+  const maquinaGanhasTexto = document.getElementById('maquinaVitorias');
+  let maquinaGanhas = 0;
+  let jogadorGanhas = 0;
   let cartaMaquina 
   let cartaJogador 
 
@@ -86,17 +86,17 @@
     const escolhaJogador = document.querySelectorAll('input[name = "atributoJogador"]'); 
     for(const botaoSelecionado of escolhaJogador){
           if(botaoSelecionado.checked){
-            radioSelecionado = botaoSelecionado.value
+            radioSelecionado = botaoSelecionado.value;
             switch (radioSelecionado) {
               case 'velocidade':
                 if(cartas[cartaJogador].atributos.velocidade == cartas[cartaMaquina].atributos.velocidade){
-                  resultado.innerHTML = 'Empate'
+                  resultado.innerHTML = 'Empate';
                 }else if(cartas[cartaJogador].atributos.velocidade > cartas[cartaMaquina].atributos.velocidade){
-                  resultado.innerHTML = 'Jogador venceu'
-                  jogadorGanhas++
+                  resultado.innerHTML = 'Jogador venceu';
+                  jogadorGanhas++;
                 }else if (cartas[cartaJogador].atributos.velocidade < cartas[cartaMaquina].atributos.velocidade){
                   resultado.innerHTML = 'Maquina venceu ';
-                  maquinaGanhas++
+                  maquinaGanhas++;
                 }
                 break;
               case 'empuxo':
@@ -104,10 +104,10 @@
                   resultado.innerHTML = 'Empate';
                 }else if(cartas[cartaJogador].atributos.empuxo > cartas[cartaMaquina].atributos.empuxo){
                   resultado.innerHTML = 'Jogador venceu';
-                  jogadorGanhas++
+                  jogadorGanhas++;
                 }else if(cartas[cartaJogador].atributos.empuxo < cartas[cartaMaquina].atributos.empuxo){
-                  resultado.innerHTML = 'Maquina venceu'
-                  maquinaGanhas++
+                  resultado.innerHTML = 'Maquina venceu';
+                  maquinaGanhas++;
                 }
                 break;
               case 'envergadura':
@@ -115,11 +115,12 @@
                   resultado.innerHTML = 'Empate';
                 }else if(cartas[cartaJogador].atributos.envergadura > cartas[cartaMaquina].atributos.envergadura){
                   resultado.innerHTML = 'Jogador venceu';
-                  jogadorGanhas++
-                }else if(cartas[cartaMaquina].atributos.envergadura < cartas[cartaMaquina].atributos.envergadura){
+                  jogadorGanhas++;
+                }else if(cartas[cartaJogador].atributos.envergadura < cartas[cartaMaquina].atributos.envergadura){
                   resultado.innerHTML = 'Maquina venceu';
-                  maquinaGanhas++
+                  maquinaGanhas++;
                 }
+                break;
 
             }
 
@@ -127,9 +128,9 @@
               `Velocidade ${cartas[cartaMaquina].atributos.velocidade} <Br>
               Empuxo ${cartas[cartaMaquina].atributos.empuxo} <br>
               Envergadura ${cartas[cartaMaquina].atributos.envergadura}`
-            }
-            jogadorGanhasTexto.innerHTML = ` ${jogadorGanhas}`
-            maquinaGanhasTexto.innerHTML = ` ${maquinaGanhas}`
+            };
+            jogadorGanhasTexto.innerHTML = ` ${jogadorGanhas}`;
+            maquinaGanhasTexto.innerHTML = ` ${maquinaGanhas}`;
 
 
           }
@@ -140,8 +141,8 @@
     escreverAtributos();
     resultado.innerHTML = " ";
     cartaMaquinaTexto.innerHTML = " ";
-    jogadorGanhasTexto.innerHTML = ` ${jogadorGanhas}`
-    maquinaGanhasTexto.innerHTML = ` ${maquinaGanhas}`
+    jogadorGanhasTexto.innerHTML = ` ${jogadorGanhas}`;
+    maquinaGanhasTexto.innerHTML = ` ${maquinaGanhas}`;
   
   }
 
