@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+  margin: 0 auto;
+}
+header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.input button {
+  width: 230px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.input button:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+.pontuacao {
+  display: flex;
+  justify-content: space-around;
+}
+.cartasLabel {
+  font-weight: bold;
+  font-size: 20px;
+}
+.cartas {
+  display: flex;
+  justify-content: space-around;
+}
+.cartaJogadorCaixa {
+  background-color: lightgrey;
+  border-radius: 5px;
+  height: 160px;
+  width: 200px;
+}
+.cartaMaquina {
+  background-color: red;
+  border-radius: 5px;
+  height: 160px;
+  width: 200px;
+  color: white;
+}
+.resultado {
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover {
+  text-decoration: underline;
+}
