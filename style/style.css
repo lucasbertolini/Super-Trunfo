@@ -10,6 +10,7 @@ header {
   font-weight: bold;
   text-transform: uppercase;
 }
+
 .input button {
   width: 230px;
   height: 40px;
@@ -36,25 +37,56 @@ header {
   display: flex;
   justify-content: space-around;
 }
+
 .cartaJogadorCaixa {
   background-color: lightgrey;
   border-radius: 5px;
-  height: 160px;
-  width: 200px;
+  height: 100%;
+  width: 230px;
+  padding: 10px;
+  text-align: start;
+  font-size: 18px;
 }
+.cartaJogadorCaixa h3,
+.cartaJogadorImg {
+  text-align: center;
+}
+.cartaJogadorImg img {
+  width: 70%;
+}
+
 .cartaMaquina {
   background-color: red;
   border-radius: 5px;
-  height: 160px;
-  width: 200px;
+  height: 100%;
+  width: 230px;
   color: white;
+  padding: 10px;
+  text-align: start;
+  font-size: 18px;
 }
+.cartaMaquina span {
+  margin: 0;
+  font-size: 18px;
+}
+.cartaMaquina h3,
+.cartaMaquinaImg {
+  text-align: center;
+}
+.cartaMaquinaImg img {
+  width: 70%;
+}
+
 .resultado {
   background-color: blue;
   font-size: 20px;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
+}
+footer {
+  margin: 20px 0;
+  font-weight: bold;
 }
 footer a {
   text-decoration: none;
@@ -63,3 +95,21 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+@media (max-width: 400px) {
+  .container h3 {
+    font-size: 15px;
+  }
+  .cartasLabel {
+    margin: 0;
+  }
+  .cartas {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 560px;
+  }
+  .cartaJogadorCaixa,
+  .cartaMaquina {
+    margin: 10px auto;
+    height: auto;
+  }
+} ;
